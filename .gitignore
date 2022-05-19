@@ -1,0 +1,12 @@
+Library/
+KinematicSoup/
+Temp/
+UserSettings/
+Logs/
+
+*.DS_Store
+
+.vscode/
+/*.sln
+/*.csproj
+Assets/KinematicSoup.meta
