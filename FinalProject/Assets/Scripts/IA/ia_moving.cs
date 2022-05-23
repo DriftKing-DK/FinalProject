@@ -6,26 +6,25 @@ public class ia_moving : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public CharacterController controller;
+    public CharacterController enemyController;
+    public CharacterController playerController;
     public float speed;
-    float x = 0;
-    float z = 0;
+    float x = 1;
+    float z = 1;
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.frameCount % 31 * Time.deltaTime == 0)
-        {
-            x = Random.Range(-1f, 1f);
-            z = Random.Range(-1f, 1f);
-        }
-
-        Debug.Log("x : " + x);
-        Debug.Log("z : " + z);
+        // if (Time.frameCount % 31 * Time.deltaTime == 0)
+        // {
+        //     x = Random.Range(-1f, 1f);
+        //     z = Random.Range(-1f, 1f);
+        // }
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+        // enemyController.Move(move * speed * Time.deltaTime);
+        enemyController.transform.position = Vector3.MoveTowards(enemyController.transform.position, playerController.transform.position, Time.deltaTime);
     }
 }
 
