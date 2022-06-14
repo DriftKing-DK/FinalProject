@@ -3,6 +3,7 @@ KinematicSoup/
 Temp/
 UserSettings/
 Logs/
+ProjectSettings/
 
 *.DS_Store
 
