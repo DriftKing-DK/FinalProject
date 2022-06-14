@@ -23,7 +23,7 @@ public class Lava_moving : MonoBehaviour
         if (timePassed < delayBetweenFrames) return;
 
 
-        Vector2 newOffset = new Vector2(mat[0].GetTextureOffset("_BaseMap").x + 0.1f, 0);
+        Vector2 newOffset = new Vector2(mat[0].GetTextureOffset("_BaseMap").x - (delayBetweenFrames / 100), 0);
         rend.materials[0].SetTextureOffset("_BaseMap", newOffset);
         timeOfLastTextureShift = Time.timeSinceLevelLoad;
     }
