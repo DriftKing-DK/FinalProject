@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    private float speed = 2f;
+    private float speed = 5f;
     private float canAttack;
     private float health = 50f;
     private float damage = 10f;
@@ -25,10 +25,11 @@ public class Target : MonoBehaviour
     void Update()
     {
         Vector3 new_pos = Vector3.MoveTowards(Cc.transform.position, player.getPlayerPosition(), Time.deltaTime * speed);
-        //new_pos.y -= 10 * Time.deltaTime;
+        transform.LookAt(player.getPlayerPosition());
+
         Cc.transform.position = new_pos;
         Attack();
-        
+
     }
 
     public void Setup(float start_health, float start_damage, float distance, int bot_number, PlayerController player_to_attack){
