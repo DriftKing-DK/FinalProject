@@ -119,6 +119,7 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range))
         {
             Target target = rayHit.transform.GetComponent<Target>();
+            //Debug.Log("touch");
             if (target != null)
                 target.TakeDamage(damage);
         }

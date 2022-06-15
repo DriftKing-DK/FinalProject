@@ -25,7 +25,7 @@ public class MouseLook : MonoBehaviour
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        /* Bouge la caméra en fonction de x */
+        /* Bouge la camï¿½ra en fonction de x */
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         /* Bouge le player en fonction de y */

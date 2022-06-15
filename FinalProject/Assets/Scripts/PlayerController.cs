@@ -22,17 +22,11 @@ public class PlayerController : MonoBehaviour
     private float power;
     private bool usingPower;
 
-    //camera
-    private float yaw;
-    private float pitch;
-
     // Start is called before the first frame update
     void Start()
     {
         Cc = GetComponent<CharacterController>();
         nbJump = 0;
-        yaw = 0f;
-        pitch = 0f;
 
         healthSlider.minValue = 0;
         healthSlider.maxValue = life;
@@ -51,7 +45,6 @@ public class PlayerController : MonoBehaviour
         ApplyMove(allowFlyMove:true);
         ApplyGravity();
         ApplyJump();
-        ApplyCamera();
         ApplyPower();
         Cc.Move(moveDirection * Time.deltaTime);
     }
@@ -64,6 +57,11 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.U) && power == 10){
             usingPower = true;
+            life += 20;
+            if (life > healthSlider.maxValue){
+                life = healthSlider.maxValue;
+            }
+            healthSlider.value = life;
             showPower.Play();
         } else if (usingPower && power <= 0){
             usingPower = false;
@@ -76,7 +74,7 @@ public class PlayerController : MonoBehaviour
         powerSlider.value = power;
     }
 
-    void ApplyMove(bool allowFlyMove = false, float speed = 6f)
+    void ApplyMove(bool allowFlyMove = false, float speed = 10f)
     {
         Vector3 vect = moveDirection;
         if (allowFlyMove || Cc.isGrounded)
@@ -94,7 +92,7 @@ public class PlayerController : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
     }
 
-    void ApplyJump(float speedJump = 8f)
+    void ApplyJump(float speedJump = 15f)
     {
         if (Input.GetButtonDown("Jump"))
         {
@@ -107,17 +105,6 @@ public class PlayerController : MonoBehaviour
         else if (Cc.isGrounded)
         {
             nbJump = 0;
-        }
-    }
-
-    void ApplyCamera(float speedCamera = 12f)
-    {
-        if (Input.GetMouseButton(0) || true)
-        {
-            yaw += speedCamera * Input.GetAxis("Mouse X");
-            pitch -= speedCamera * Input.GetAxis("Mouse Y");
-
-            transform.eulerAngles = new Vector3(pitch, yaw, 0);
         }
     }
 
@@ -134,5 +121,9 @@ public class PlayerController : MonoBehaviour
         if (power < 10 && usingPower == false){
             power++;
         }
+    }
+
+    public Vector3 getPlayerPosition(){
+        return Cc.transform.position;
     }
 }

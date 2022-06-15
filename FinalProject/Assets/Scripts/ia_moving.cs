@@ -6,17 +6,25 @@ public class ia_moving : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public CharacterController enemyController;
-    public CharacterController playerController;
+    public PlayerController playerController;
     public float speed;
     float x = 1;
     float z = 1;
+
+    private CharacterController Cc;
+
+    void Start(){
+        Cc = GetComponent<CharacterController>();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
         Vector3 move = transform.right * x + transform.forward * z;
-        enemyController.transform.position = Vector3.MoveTowards(enemyController.transform.position, playerController.transform.position, Time.deltaTime);
+        Vector3 new_pos = Vector3.MoveTowards(Cc.transform.position, playerController.getPlayerPosition(), Time.deltaTime);
+        new_pos.y = 0;
+        Cc.transform.position = new_pos;
     }
 }
 
