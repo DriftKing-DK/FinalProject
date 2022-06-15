@@ -29676,7 +29676,7 @@ Transform:
   m_GameObject: {fileID: 663875255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -23.264542, y: -23.92727, z: -0.17401123}
-  m_LocalScale: {x: 8.919058, y: 11.5501795, z: 8.919058}
+  m_LocalScale: {x: 12.234272, y: 12.336746, z: 11.890887}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1662748243}
@@ -55685,6 +55685,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
+        type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Name
       value: Spawn Rate
       objectReference: {fileID: 0}
@@ -55700,14 +55705,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Name
+      value: Initial Velocity_vector
+      objectReference: {fileID: 0}
+    - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
+        type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Overridden
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.y
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
         type: 3}
       propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[0].m_Value
       value: 
       objectReference: {fileID: 2800000, guid: 82e1f644fb8e5504393566f67abc8f19, type: 3}
+    - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6af594ec822b0d841896bd627ba57625, type: 3}
 --- !u!4 &912147551 stripped
@@ -55892,6 +55917,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
+        type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -55912,8 +55942,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Name
+      value: Initial Velocity_vector
+      objectReference: {fileID: 0}
+    - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
+        type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Overridden
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.y
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
         type: 3}
@@ -55928,6 +55973,11 @@ PrefabInstance:
     - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
         type: 3}
       propertyPath: m_PropertySheet.m_Gradient.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Overridden
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 958800534318925431, guid: 6af594ec822b0d841896bd627ba57625,
@@ -69967,8 +70017,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350657595}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -38.414543, y: -18.067272, z: 15.265991}
-  m_LocalScale: {x: 8.919058, y: 6.1555524, z: 8.919058}
+  m_LocalPosition: {x: -39.46, y: -18.067272, z: 14.8}
+  m_LocalScale: {x: 8.919058, y: 8.863996, z: 8.919058}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1662748243}
@@ -105019,7 +105069,7 @@ Transform:
   m_GameObject: {fileID: 1900839963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -30.02454, y: -25.067272, z: 5.175995}
-  m_LocalScale: {x: 8.919058, y: 11.5501795, z: 8.919058}
+  m_LocalScale: {x: 8.919058, y: 17.938583, z: 8.919058}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1662748243}
