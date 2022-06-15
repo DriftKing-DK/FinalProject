@@ -45,9 +45,9 @@ public class Gun : MonoBehaviour
     {
         int res = 0;
         if (allowButtonHold)
-            shooting = Input.GetMouseButton(1);
+            shooting = Input.GetMouseButton(0);
         else
-            shooting = Input.GetMouseButtonDown(1);
+            shooting = Input.GetMouseButtonDown(0);
         
         if (Input.GetKeyDown(KeyCode.R) && !reloading && bulletsLeft < magazineSize && readyToShoot)
         {
@@ -119,9 +119,9 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range))
         {
             Target target = rayHit.transform.GetComponent<Target>();
-            //Debug.Log("touch");
-            if (target != null)
+            if (target != null){
                 target.TakeDamage(damage);
+            }
         }
 
         //debugDirection.Add(direction);

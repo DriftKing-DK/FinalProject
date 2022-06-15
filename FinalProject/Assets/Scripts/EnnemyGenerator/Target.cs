@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    private float speed = 5f;
+    private const float SPEED = 2f;
+    private float health;
+    private float damage;
     private float canAttack;
-    private float health = 50f;
-    private float damage = 10f;
     private float distanceDamage;
 
-    private int reference;
     private bool alive;
 
     private PlayerController player;
@@ -24,20 +23,21 @@ public class Target : MonoBehaviour
 
     void Update()
     {
-        Vector3 new_pos = Vector3.MoveTowards(Cc.transform.position, player.getPlayerPosition(), Time.deltaTime * speed);
+        Vector3 new_pos = Vector3.MoveTowards(Cc.transform.position, player.getPlayerPosition(), Time.deltaTime * SPEED);
         transform.LookAt(player.getPlayerPosition());
 
         Cc.transform.position = new_pos;
         Attack();
-
+        if (player.life == 0){
+            Die();
+        }
     }
 
-    public void Setup(float start_health, float start_damage, float distance, int bot_number, PlayerController player_to_attack){
+    public void Setup(float start_health, float start_damage, float distance, PlayerController player_to_attack){
         health = start_health;
         damage = start_damage;
         distanceDamage = distance;
         player = player_to_attack;
-        reference = bot_number;
         gameObject.SetActive(true);
         alive = true;
     }
@@ -77,7 +77,6 @@ public class Target : MonoBehaviour
 
     private void Die()
     {
-        player.IncreasePower();
         alive = false;
         Destroy(gameObject);
     }

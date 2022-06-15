@@ -49,6 +49,13 @@ public class PlayerController : MonoBehaviour
         Cc.Move(moveDirection * Time.deltaTime);
     }
 
+    public void Respawn(){
+        life = healthSlider.maxValue;
+        healthSlider.value = life;
+        power = 0;
+        powerSlider.value = power;
+    }
+
     void ApplyPower(){
         if (power > 10){
             power = 10;
@@ -112,8 +119,12 @@ public class PlayerController : MonoBehaviour
     {
         if (usingPower == false){ // invisible when using power
             life -= damage;
-            healthSlider.value = life;
         }
+        if (life < 0){
+            life = 0;
+        }
+            
+        healthSlider.value = life;
     }
 
     public void IncreasePower()

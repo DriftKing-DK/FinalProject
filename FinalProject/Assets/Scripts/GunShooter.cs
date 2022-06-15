@@ -64,7 +64,6 @@ public class GunShooter : MonoBehaviour
             //AmmoLeft slider
             AmmoLeft.maxValue = myGun.magazineSize;
             AmmoLeft.minValue = 0;
-            AmmoLeft.value = myGun.GetBulletLeft();
 
             //TimeSlider
 
@@ -76,6 +75,7 @@ public class GunShooter : MonoBehaviour
             TimeSlider.maxValue = myGun.timeBetweenShooting;
             TimeSlider.minValue = 0;
             TimeSlider.value = 0;
+            AmmoLeft.value = myGun.GetBulletLeft();
         }
     }
 
